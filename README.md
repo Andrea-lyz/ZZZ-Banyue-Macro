@@ -127,7 +127,7 @@ global KeySpecial := "e"          ; 强化/特殊技
 
 ### Q: 宏不生效？
 
-1. 确认 AHK 图标在托盘区
+1. 确认 AHK 已管理员权限运行并且图标在托盘区
 2. 按 `Home` 确认宏已开启
 3. 确认游戏窗口处于激活状态
 4. 确认游戏进程名为 `ZenlessZoneZero.exe` 或 `ZenlessZoneZeroBeta.exe`
