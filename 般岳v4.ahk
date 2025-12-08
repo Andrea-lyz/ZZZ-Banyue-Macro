@@ -177,7 +177,7 @@ ToggleKeyOverlay() {
     KeyOverlayEnabled := !KeyOverlayEnabled
     if KeyOverlayEnabled {
         if KeyOverlayGui
-            KeyOverlayGui.Show("NoActivate x100 y100 w360 h270")
+            KeyOverlayGui.Show("NoActivate x100 y100 w270 h200")
         ToolTip("按键显示: 已开启")
     } else {
         if KeyOverlayGui
@@ -191,31 +191,31 @@ CreateKeyOverlay() {
     global KeyOverlayGui, KeyControls, StatusTextCtrl, KeyOverlayEnabled
     KeyOverlayGui := Gui("+AlwaysOnTop -Caption +ToolWindow +Owner", "按键显示")
     KeyOverlayGui.BackColor := "1e1e1e"
-    KeyOverlayGui.SetFont("s10 bold", "Verdana")
+    KeyOverlayGui.SetFont("s8 bold", "Verdana")
 
     ; 样式辅助函数
-    AddKey := "w50 h50 center 0x200 cWhite Background333333 border"
+    AddKey := "w38 h38 center 0x200 cWhite Background333333 border"
 
     ; --- 键盘区 (左侧) ---
-    KeyControls["1"] := KeyOverlayGui.Add("Text", "x10 y10 " AddKey, "1")
-    KeyControls["2"] := KeyOverlayGui.Add("Text", "x+5 " AddKey, "2")
-    KeyControls["3"] := KeyOverlayGui.Add("Text", "x+5 " AddKey, "3")
-    KeyControls["4"] := KeyOverlayGui.Add("Text", "x+5 " AddKey, "4")
+    KeyControls["1"] := KeyOverlayGui.Add("Text", "x8 y8 " AddKey, "1")
+    KeyControls["2"] := KeyOverlayGui.Add("Text", "x+4 " AddKey, "2")
+    KeyControls["3"] := KeyOverlayGui.Add("Text", "x+4 " AddKey, "3")
+    KeyControls["4"] := KeyOverlayGui.Add("Text", "x+4 " AddKey, "4")
 
-    KeyControls["q"] := KeyOverlayGui.Add("Text", "x10 y+5 " AddKey, "Q")
-    KeyControls["e"] := KeyOverlayGui.Add("Text", "x+60 " AddKey, "E")
+    KeyControls["q"] := KeyOverlayGui.Add("Text", "x8 y+4 " AddKey, "Q")
+    KeyControls["e"] := KeyOverlayGui.Add("Text", "x+45 " AddKey, "E")
 
-    KeyControls["LShift"] := KeyOverlayGui.Add("Text", "x10 y+5 w105 h40 center 0x200 cWhite Background333333 border",
+    KeyControls["LShift"] := KeyOverlayGui.Add("Text", "x8 y+4 w80 h30 center 0x200 cWhite Background333333 border",
         "Shift")
-    KeyControls["Space"] := KeyOverlayGui.Add("Text", "x+5 w105 h40 center 0x200 cWhite Background333333 border",
+    KeyControls["Space"] := KeyOverlayGui.Add("Text", "x+4 w80 h30 center 0x200 cWhite Background333333 border",
         "Space")
 
     ; --- 鼠标区 (右侧) ---
-    KeyControls["LButton"] := KeyOverlayGui.Add("Text", "x240 y10 " AddKey, "LMB")
-    KeyControls["RButton"] := KeyOverlayGui.Add("Text", "x+5 " AddKey, "RMB")
+    KeyControls["LButton"] := KeyOverlayGui.Add("Text", "x180 y8 " AddKey, "LMB")
+    KeyControls["RButton"] := KeyOverlayGui.Add("Text", "x+4 " AddKey, "RMB")
 
-    KeyControls["XButton1"] := KeyOverlayGui.Add("Text", "x240 y+5 " AddKey, "M4")
-    KeyControls["XButton2"] := KeyOverlayGui.Add("Text", "x+5 " AddKey, "M5")
+    KeyControls["XButton1"] := KeyOverlayGui.Add("Text", "x180 y+4 " AddKey, "M4")
+    KeyControls["XButton2"] := KeyOverlayGui.Add("Text", "x+4 " AddKey, "M5")
 
     ; 拖动支持
     DragFunc := (*) => PostMessage(0xA1, 2, 0, , "ahk_id " KeyOverlayGui.Hwnd)
@@ -226,11 +226,11 @@ CreateKeyOverlay() {
     }
 
     ; --- 状态显示区 ---
-    KeyOverlayGui.SetFont("s11 bold cWhite", "Microsoft YaHei")
-    StatusTextCtrl := KeyOverlayGui.Add("Text", "x10 y175 w340 h80 cGray Background1e1e1e Wrap", "等待指令...")
+    KeyOverlayGui.SetFont("s9 bold cWhite", "Microsoft YaHei")
+    StatusTextCtrl := KeyOverlayGui.Add("Text", "x8 y130 w254 h60 cGray Background1e1e1e Wrap", "等待指令...")
 
     if KeyOverlayEnabled {
-        KeyOverlayGui.Show("NoActivate x100 y100 w360 h270")
+        KeyOverlayGui.Show("NoActivate x100 y100 w270 h200")
     }
 
     SetTimer(UpdateKeyOverlay, 16)
