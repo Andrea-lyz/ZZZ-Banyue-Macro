@@ -43,7 +43,7 @@ global GlobalLatency := 0              ; 全局延迟补偿(ms)，可填负值�
 global KeyPressDelay := 100            ; 单次按键按下时长(ms)
 global KeyIntervalDelay_Manual := 50   ; 搓招模式 - 连续按键间隔(ms)
 global KeyIntervalDelay_Combo := 80    ; 连招模式 - 连续按键间隔(ms)
-global TauntDirectionDelay := 22        ; 叫阵方向键间隔(ms)
+global TauntDirectionDelay := 25       ; 叫阵方向键间隔(ms)
 
 ; --- 连招延迟配置 (核心调优区) ---
 
@@ -59,7 +59,7 @@ global Key2Delay2 := 300          ; 狮子吼·怒 → 山摇 延迟 (等待完�
 
 ; [X键] 怒吼瞬山 (EEE启动)
 ; 路线: 论道 → 狮子吼·怒 → 按住A(蓄力) → 瞬山
-global XKeyHoldADelay := 1250      ; 按住A的时长
+global XKeyHoldADelay := 1220      ; 按住A的时长
 
 ; [3键] 四连招延迟 (地动起手，闪反后用) - 原 Key 2
 ; 路线: 地动 → 山摇·怒 → 论道 → 狮子吼·怒 (最高总倍率)
@@ -79,7 +79,7 @@ global CDelay3 := 1150            ; 地动 → 山摇·怒 延迟
 
 ; [侧键4] 四连招延迟 (怒相爆发: 狮子吼起手4点山威循环)
 ; 路线: 论道→狮子吼·怒→地动→山摇·怒
-global Side4DelayA := 500         ;长A进入怒相
+global Side4DelayA := 600         ;长A进入怒相
 global Side4Delay1 := 500         ;论道(EAE) → 狮子吼·怒(AAE) 延迟
 global Side4Delay2 := 300          ;狮子吼·怒(AAE) → 地动(AEA) 延迟
 global Side4Delay3 := 1100          ;地动(AEA) → 山摇·怒(EEA)延迟
